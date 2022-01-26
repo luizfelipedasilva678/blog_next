@@ -1,7 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-  body {
-    background-color: red;
+  * {
+    margin: 0;
+    outline: none;
+    box-sizing: box-sizing;
   }
 `;
