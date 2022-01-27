@@ -1,3 +1,17 @@
+export interface PostsData {
+  data: Post[];
+  meta: MetaOptions;
+}
+
+export interface MetaOptions {
+  pagination: {
+    page: number;
+    pageCount: number;
+    pageSize: number;
+    total: number;
+  };
+}
+
 export interface Post {
   id: number;
   attributes: PostAttributes;
