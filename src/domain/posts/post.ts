@@ -28,8 +28,10 @@ export interface PostAttributes {
 }
 
 export interface Cover {
-  id: number;
-  attributes: CoverAttributes;
+  data: {
+    id: number;
+    attributes: CoverAttributes;
+  };
 }
 
 export interface CoverAttributes {
@@ -38,7 +40,12 @@ export interface CoverAttributes {
   caption: string;
   width: number;
   height: number;
-  formats: Format[];
+  formats: {
+    large: Format;
+    small: Format;
+    medium: Format;
+    thumbnail: Format;
+  };
 }
 
 export interface Format {
