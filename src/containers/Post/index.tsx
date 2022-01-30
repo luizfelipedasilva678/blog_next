@@ -3,6 +3,7 @@ import { Header } from '../../components/Header';
 import { Heading } from '../../components/Heading';
 import { MainContainer } from '../../components/MainContainer';
 import { PostCover } from '../../components/PostCover';
+import { PostDetails } from '../../components/PostDetails';
 import { Post } from '../../domain/posts/post';
 
 export type PostProps = {
@@ -20,7 +21,11 @@ export const PostPage = ({ post }: PostProps): JSX.Element => {
             alt={post.attributes.cover.data.attributes.formats.large.name}
             coverUrl={post.attributes.cover.data.attributes.formats.large.url}
           ></PostCover>
-
+          <PostDetails
+            date={post.attributes.createdAt}
+            author={post.attributes.author.data.attributes.name}
+            category={post.attributes.category.data.attributes.name}
+          />
           <div
             dangerouslySetInnerHTML={{ __html: post.attributes.content }}
           ></div>

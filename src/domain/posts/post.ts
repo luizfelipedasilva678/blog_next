@@ -17,6 +17,30 @@ export interface Post {
   attributes: PostAttributes;
 }
 
+export interface Author {
+  data: {
+    id: number;
+    attributes: {
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      publishedAt: string;
+    };
+  };
+}
+
+export interface Category {
+  data: {
+    id: number;
+    attributes: {
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      publishedAt: string;
+    };
+  };
+}
+
 export interface PostAttributes {
   title: string;
   content: string;
@@ -25,6 +49,8 @@ export interface PostAttributes {
   updatedAt: string;
   publishedAt: string;
   cover: Cover;
+  author: Author;
+  category: Category;
 }
 
 export interface Cover {
