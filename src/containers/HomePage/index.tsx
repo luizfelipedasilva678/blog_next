@@ -1,3 +1,4 @@
+import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
 import { MainContainer } from '../../components/MainContainer';
 import { PostCard } from '../../components/PostCard';
@@ -17,7 +18,7 @@ export default function HomePage({ posts }: HomePageProps) {
           {posts.data.map((post: Post) => (
             <>
               <PostCard
-                key={post.attributes.slug}
+                key={post.id}
                 slug={post.attributes.slug}
                 cover={post.attributes.cover.data.attributes.formats.small.url}
                 title={post.attributes.title}
@@ -26,6 +27,7 @@ export default function HomePage({ posts }: HomePageProps) {
           ))}
         </Container>
       </MainContainer>
+      <Footer />
     </>
   );
 }
