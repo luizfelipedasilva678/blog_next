@@ -2,6 +2,7 @@ import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
 import { Heading } from '../../components/Heading';
 import { MainContainer } from '../../components/MainContainer';
+import { PostContainer } from '../../components/PostContainer';
 import { PostCover } from '../../components/PostCover';
 import { PostDetails } from '../../components/PostDetails';
 import { Post } from '../../domain/posts/post';
@@ -26,9 +27,7 @@ export const PostPage = ({ post }: PostProps): JSX.Element => {
             author={post.attributes.author.data.attributes.name}
             category={post.attributes.category.data.attributes.name}
           />
-          <div
-            dangerouslySetInnerHTML={{ __html: post.attributes.content }}
-          ></div>
+          <PostContainer content={post.attributes.content} />
         </>
       </MainContainer>
       <Footer />
