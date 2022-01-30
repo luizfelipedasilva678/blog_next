@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import HomePage from '../containers/HomePage';
 import { getAllPosts } from '../data/posts/get-all-posts';
-import { Post, PostsData } from '../domain/posts/post';
+import { PostsData } from '../domain/posts/post';
 interface HomeProps {
   posts: PostsData;
 }
@@ -11,7 +11,9 @@ export default function Home({ posts }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts('_sort=id:desc&_start=0&_limit=30');
+  const posts = await getAllPosts(
+    'sort=id:asc&pagination[page]=2&pagination[pageSize]=1',
+  );
 
   return {
     props: { posts },

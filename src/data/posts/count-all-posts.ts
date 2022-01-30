@@ -2,8 +2,8 @@ import { PostsData } from '../../domain/posts/post';
 import { fetchJson } from '../../utils/fetch-json';
 import { POSTS_URL } from '../../config/app-config';
 
-export async function getAllPosts(query = ''): Promise<PostsData> {
-  const url = `${POSTS_URL}&${query}`;
+export async function countAllPosts(): Promise<number> {
+  const url = `${POSTS_URL}`;
   const posts = await fetchJson<PostsData>(url);
-  return posts;
+  return posts.data.length;
 }
